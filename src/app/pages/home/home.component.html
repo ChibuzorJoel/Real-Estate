@@ -1,0 +1,107 @@
+<section class="hero-section">
+  <div class="overlay">
+    <div class="hero-content">
+      <h1>YUNGESTATE NIGERIA</h1>
+      <p class="bg-dark">Condos • Rentals • Real Estate</p>
+
+      <div class="search-filters">
+        <div class="dropdown">
+          <button class="dropdown-btn">BEDROOMS <i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a href="#">Studios</a>
+            <a href="#">1 Bedroom</a>
+            <a href="#">2 Bedrooms</a>
+            <a href="#">3+ Bedrooms</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropdown-btn">AMENITIES <i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a href="#">Parking</a>
+            <a href="#">Swimming Pool</a>
+            <a href="#">Gym</a>
+            <a href="#">Gated Security</a>
+          </div>
+        </div>
+
+        <button class="search-btn">SEARCH ALL PROPERTIES</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-listings">
+  <div class="container">
+    <h2 class="section-title">Featured Properties</h2>
+    <div class="listings-grid">
+      <div class="listing-card" *ngFor="let property of featuredProperties">
+        <img [src]="property.image" alt="Property">
+        <div class="listing-info">
+          <h3>{{ property.title }}</h3>
+          <p>{{ property.location }}</p>
+          <strong>₦{{ property.price | number }}</strong>
+        </div>
+      </div>
+    </div>
+      <div class="view-all-btn">
+      <button class="btn-view-all">View All Listings</button>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works" id="howItWorks">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-search-location icon"></i>
+        <h3>Search Properties</h3>
+        <p>Browse our listings to find the perfect home or rental that fits your needs.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-calendar-check icon"></i>
+        <h3>Schedule a Visit</h3>
+        <p>Book an in-person or virtual tour with just a few clicks.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-file-signature icon"></i>
+        <h3>Make an Offer</h3>
+        <p>Get expert guidance to negotiate and make your best offer.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="400">
+        <i class="fas fa-key icon"></i>
+        <h3>Close & Move In</h3>
+        <p>Finalize paperwork quickly and move into your new property.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-choose-us" id="whyChooseUs">
+  <div class="container">
+    <h2 class="section-title">Why Choose Us</h2>
+    <div class="benefits-grid">
+      <div class="benefit" data-aos="fade-right">
+        <i class="fas fa-thumbs-up icon"></i>
+        <h3>Trusted Listings</h3>
+        <p>We verify every property to ensure you're seeing genuine, accurate information.</p>
+      </div>
+      <div class="benefit" data-aos="fade-right" data-aos-delay="100">
+        <i class="fas fa-users icon"></i>
+        <h3>Expert Agents</h3>
+        <p>Our experienced agents offer personal guidance every step of the way.</p>
+      </div>
+      <div class="benefit" data-aos="fade-right" data-aos-delay="200">
+        <i class="fas fa-shield-alt icon"></i>
+        <h3>Secure Process</h3>
+        <p>We prioritize your privacy and security through every transaction.</p>
+      </div>
+      <div class="benefit" data-aos="fade-right" data-aos-delay="300">
+        <i class="fas fa-clock icon"></i>
+        <h3>24/7 Support</h3>
+        <p>Need help? Our support team is available around the clock for your peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>

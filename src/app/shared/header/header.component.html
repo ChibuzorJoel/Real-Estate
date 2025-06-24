@@ -1,0 +1,47 @@
+<header class="casacol-header">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a routerLink="/">
+        <img src="assets/img/logo.jpg" alt="JTECH" />
+      </a>
+    </div>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" [class.open]="menuOpen">
+      <ul>
+        <li class="nav-item active"><a href="home">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="#">Sales Listings</a>
+          <ul class="dropdown">
+            <li><a href="#">Studios and 1 Bedrooms</a></li>
+            <li><a href="#">Two Bedrooms</a></li>
+            <li><a href="#">Three+ Bedrooms</a></li>
+            <li><a href="#">Penthouse Listings</a></li>
+            <li><a href="#">Daily Rental Buildings</a></li>
+            <li><a href="#">Pre-Construction Projects</a></li>
+            <li><a href="#">All Poblado Listings</a></li>
+            <li><a href="#">All Laureles Listings</a></li>
+            <li><a href="#">Sold Properties</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="#">Buyer's Guide</a></li>
+        <li class="nav-item"><a href="rent">Rentals</a></li>
+        <li class="nav-item"><a href="about">About Us</a></li>
+        
+      </ul>
+    </nav>
+
+    <!-- CTA Button -->
+    <div class="cta-button">
+      <a href="#" class="btn-orange">All Listings</a>
+    </div>
+  </div>
+</header>
