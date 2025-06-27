@@ -1,0 +1,57 @@
+.buyers-guide {
+  background: linear-gradient(to left, #fff8f1, #f9f9f9);
+  padding: 80px 20px;
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1f0e0e;
+    margin-bottom: 50px;
+    font-weight: 700;
+  }
+
+  .guide-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .guide-step {
+    background: #ffffff;
+    border-left: 5px solid #e86800;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(30px);
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      color: #05021d;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

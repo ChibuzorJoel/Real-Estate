@@ -1,0 +1,54 @@
+<section class="rental-page">
+  <h2 class="section-title">Find a Place to Rent</h2>
+
+  <!-- Filters -->
+  <div class="filters">
+    <input type="text" placeholder="Search location..." [(ngModel)]="searchLocation" />
+
+    <div class="price-slider">
+      <label>₦{{ minPrice | number }}</label>
+      <input type="range" min="0" max="1500000" step="50000" [(ngModel)]="minPrice" />
+      <label>₦{{ maxPrice | number }}</label>
+      <input type="range" min="50000" max="1500000" step="50000" [(ngModel)]="maxPrice" />
+    </div>
+
+    <div class="category-tags">
+      <button
+        *ngFor="let cat of categories"
+        (click)="selectedCategory = cat"
+        [class.active]="selectedCategory === cat"
+      >
+        <i
+          *ngIf="cat !== 'All'"
+          class="fas"
+          [ngClass]="{
+            'fa-building': cat === 'Apartment',
+            'fa-home': cat === 'Mini Flat',
+            'fa-gem': cat === 'Luxury'
+          }"
+        ></i>
+        {{ cat }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Listings -->
+  <div class="rental-list">
+    <div class="rental-card" *ngFor="let property of filteredProperties">
+      <img class="rental-image" [src]="property.image" [alt]="property.title" />
+      <div class="rental-details">
+        <h3>{{ property.title }}</h3>
+        <p class="location">{{ property.location }}</p>
+        <p class="price">₦{{ property.price | number }}</p>
+        <ul class="features">
+          <li *ngFor="let f of property.features">
+            <i class="fas fa-check-circle"></i> {{ f }}
+          </li>
+        </ul>
+        <a [href]="generateWhatsAppLink(property)" target="_blank" class="whatsapp-btn">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

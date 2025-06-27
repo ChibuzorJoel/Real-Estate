@@ -17,31 +17,38 @@
     <!-- Navigation -->
     <nav class="main-nav" [class.open]="menuOpen">
       <ul>
-        <li class="nav-item active"><a href="home">Home</a></li>
+        <li class="nav-item active">
+          <a routerLink="/">Home</a>
+        </li>
+
         <li class="nav-item has-dropdown">
           <a href="#">Sales Listings</a>
           <ul class="dropdown">
-            <li><a href="#">Studios and 1 Bedrooms</a></li>
-            <li><a href="#">Two Bedrooms</a></li>
-            <li><a href="#">Three+ Bedrooms</a></li>
-            <li><a href="#">Penthouse Listings</a></li>
-            <li><a href="#">Daily Rental Buildings</a></li>
-            <li><a href="#">Pre-Construction Projects</a></li>
-            <li><a href="#">All Poblado Listings</a></li>
-            <li><a href="#">All Laureles Listings</a></li>
-            <li><a href="#">Sold Properties</a></li>
+          <li><a class="dropdown-item" routerLink="/sales/category/studios">Studios</a></li>
+          <li><a class="dropdown-item" routerLink="/sales/category/two-bedrooms">Two Bedrooms</a></li>
+          <li><a class="dropdown-item" routerLink="/sales/category/three-plus">3+ Bedrooms</a></li>
+          <li><a class="dropdown-item" routerLink="/sales/category/penthouses">Penthouses</a></li>
+          <li><a class="dropdown-item" routerLink="/sales/category/sold">Sold</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a href="#">Buyer's Guide</a></li>
-        <li class="nav-item"><a href="rent">Rentals</a></li>
-        <li class="nav-item"><a href="about">About Us</a></li>
-        
+
+        <li class="nav-item">
+          <a routerLink="/buyer">Buyer's Guide</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/rent">Rentals</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/about">About Us</a>
+        </li>
       </ul>
     </nav>
 
     <!-- CTA Button -->
     <div class="cta-button">
-      <a href="#" class="btn-orange">All Listings</a>
+      <a routerLink="/all-listings" class="btn-orange">All Listings</a>
     </div>
   </div>
 </header>

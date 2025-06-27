@@ -1,0 +1,22 @@
+<div class="sales-category">
+  <h2 class="heading">Browse Sales Listings</h2>
+
+  <div class="properties">
+    <div class="property-card" *ngFor="let property of filteredProperties">
+      <img [src]="property.image" alt="Property" />
+      <div class="details">
+        <h4>{{ property.name }}</h4>
+        <div class="info">
+          <span>{{ property.location }}</span>
+          <span>{{ property.bedrooms }} Bedroom{{ property.bedrooms > 1 ? 's' : '' }}</span>
+        </div>
+        <div class="price">₦{{ property.price | number }}</div>
+        <a [href]="generateWhatsAppLink(property)" target="_blank" class="whatsapp-link">
+          Contact via WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="filteredProperties.length === 0" class="no-results">No properties found in this category.</p>
+</div>

@@ -1,0 +1,59 @@
+<div class="listings-container container py-5">
+  <h2 class="section-title text-center mb-4">All Property Listings</h2>
+
+  <!-- Filters -->
+  <div class="filters mb-4 d-flex flex-wrap gap-3 justify-content-between">
+    <select [(ngModel)]="selectedType" class="form-select">
+      <option value="">All Types</option>
+      <option *ngFor="let t of uniqueTypes">{{ t }}</option>
+    </select>
+
+    <select [(ngModel)]="selectedLocation" class="form-select">
+      <option value="">All Locations</option>
+      <option *ngFor="let l of uniqueLocations">{{ l }}</option>
+    </select>
+  </div>
+
+  <!-- Listings Grid -->
+  <div class="row">
+    <div *ngFor="let property of paginatedProperties()" class="col-md-4 mb-4">
+      <div class="property-card card h-100 shadow-sm">
+        <div class="image-wrapper position-relative">
+          <img [src]="property.image" alt="{{ property.name }}" class="card-img-top" />
+          <span class="price-tag">₦{{ property.price | number }}</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ property.name }}</h5>
+          <p class="card-text text-muted">
+            <i class="bi bi-geo-alt"></i> {{ property.location }} <br />
+            <strong>{{ property.bedrooms }}</strong> Beds | {{ property.type }}
+          </p>
+        </div>
+        <div class="card-footer bg-white text-center">
+          <a [href]="generateWhatsAppLink(property)" target="_blank" class="btn btn-whatsapp w-100">
+            <i class="bi bi-whatsapp"></i> Contact on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <nav *ngIf="totalPages > 1" class="pagination-wrapper">
+    <ul class="pagination">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" (click)="prevPage()">Previous</a>
+      </li>
+      <li
+        class="page-item"
+        *ngFor="let page of [].constructor(totalPages); let i = index"
+        [class.active]="i + 1 === currentPage"
+      >
+        <a class="page-link" (click)="goToPage(i + 1)">{{ i + 1 }}</a>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <a class="page-link" (click)="nextPage()">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
