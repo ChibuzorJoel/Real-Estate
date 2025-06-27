@@ -286,7 +286,7 @@ goToPage(page: number) {
 
 generateWhatsAppLink(property: any) {
   const msg = encodeURIComponent(`Hello, I'm interested in your ${property.name} listed at ${property.location}.`);
-  return `https://wa.me/2349012345678?text=${msg}`;
+  return `https://wa.me/2349021706710?text=${msg}`;
 }
 
 }

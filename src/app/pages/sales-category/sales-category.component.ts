@@ -293,6 +293,6 @@ export class SalesCategoryComponent implements OnInit {
 
   generateWhatsAppLink(property: Property): string {
     const message = `Hello, I'm interested in the ${property.name} located at ${property.location}. Is it still available?`;
-    return `https://wa.me/2348012345678?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/2349021706710?text=${encodeURIComponent(message)}`;
   }
 }
