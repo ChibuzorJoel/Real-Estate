@@ -16,31 +16,40 @@
 
   <!-- Listings Grid -->
   <div class="row">
-    <div *ngFor="let property of paginatedProperties()" class="col-md-4 mb-4">
-      <div class="property-card card h-100 shadow-sm">
-        <div class="image-wrapper position-relative">
-          <img [src]="property.image" alt="{{ property.name }}" class="card-img-top" />
-          <span class="price-tag">₦{{ property.price | number }}</span>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{ property.name }}</h5>
-          <p class="card-text text-muted">
-            <i class="bi bi-geo-alt"></i> {{ property.location }} <br />
-            <strong>{{ property.bedrooms }}</strong> Beds | {{ property.type }}
-          </p>
-        </div>
-        <div class="card-footer bg-white text-center">
-          <a [href]="generateWhatsAppLink(property)" target="_blank" class="btn btn-whatsapp w-100">
-            <i class="bi bi-whatsapp"></i> Contact on WhatsApp
-          </a>
+    <ng-container *ngIf="paginatedProperties().length > 0; else noResults">
+      <div *ngFor="let property of paginatedProperties()" class="col-md-4 mb-4">
+        <div class="property-card card h-100 shadow-sm">
+          <div class="image-wrapper position-relative">
+            <img [src]="property.image" alt="{{ property.name }}" class="card-img-top" />
+            <span class="price-tag">₦{{ property.price | number }}</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ property.name }}</h5>
+            <p class="card-text text-muted">
+              <i class="bi bi-geo-alt"></i> {{ property.location }} <br />
+              <strong>{{ property.bedrooms }}</strong> Beds | {{ property.type }}
+            </p>
+          </div>
+          <div class="card-footer bg-white d-flex justify-content-center">
+            <a [href]="generateWhatsAppLink(property)" target="_blank" class="btn btn-whatsapp">
+              <i class="bi bi-whatsapp"></i> Contact on WhatsApp
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </ng-container>
   </div>
 
+  <!-- No Results Message -->
+  <ng-template #noResults>
+    <div class="text-center text-muted mt-5">
+      <p>No properties found for the selected location or type.</p>
+    </div>
+  </ng-template>
+
   <!-- Pagination -->
-  <nav *ngIf="totalPages > 1" class="pagination-wrapper">
-    <ul class="pagination">
+  <nav *ngIf="totalPages > 1" class="pagination-wrapper mt-4">
+    <ul class="pagination justify-content-center">
       <li class="page-item" [class.disabled]="currentPage === 1">
         <a class="page-link" (click)="prevPage()">Previous</a>
       </li>
