@@ -198,3 +198,45 @@ nav .pagination {
     }
   }
 }
+.no-results-message {
+  text-align: center;
+  color: #777;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  background: #fafafa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: slideInUp 0.6s ease both;
+
+  p {
+    margin: 0;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
