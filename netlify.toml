@@ -1,0 +1,6 @@
+[build]
+  command = "npx ng build --configuration=production"
+  publish = "dist/yung-estate-app"
+
+[build.environment]
+  NODE_VERSION = "16"
