@@ -44,26 +44,43 @@
   </section>
 
   <!-- FEATURED LISTINGS SECTION -->
-  <section class="featured-listings">
-    <div class="container">
-      <h2 class="section-title">Featured Properties</h2>
+ <section class="featured-listings">
+  <div class="container">
+    <h2 class="section-title">Featured Properties</h2>
 
-      <div class="listings-grid">
-        <div class="listing-card" *ngFor="let property of featuredProperties">
+    <div class="listings-grid">
+      <div class="listing-card" *ngFor="let property of featuredProperties" (click)="openModal(property)">
+        <div class="img-container">
           <img [src]="property.image" [alt]="property.title" loading="lazy">
-          <div class="listing-info">
-            <h3>{{ property.title }}</h3>
-            <p>{{ property.location }}</p>
-            <strong>₦{{ property.price | number }}</strong>
-          </div>
+        </div>
+        <div class="listing-info">
+          <h3>{{ property.title }}</h3>
+          <p>{{ property.location }}</p>
+          <strong>₦{{ property.price | number }}</strong>
         </div>
       </div>
+    </div>
 
-      <div class="view-all-btn">
-        <a routerLink="/all-listings" class="btn-view-all">View All Listings</a>
+    <div class="view-all-btn">
+      <a routerLink="/all-listings" class="btn-view-all">View All Listings</a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="selectedProperty" (click)="closeModal()">
+    <div class="property-modal" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="closeModal()">×</button>
+      <img [src]="selectedProperty.image" [alt]="selectedProperty.title" />
+      <div class="modal-content">
+        <h3>{{ selectedProperty.title }}</h3>
+        <p><strong>Location:</strong> {{ selectedProperty.location }}</p>
+        <p><strong>Price:</strong> ₦{{ selectedProperty.price | number }}</p>
+        <p><em>Additional property details can go here…</em></p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- HOW IT WORKS SECTION -->
   <section class="how-it-works" id="howItWorks">

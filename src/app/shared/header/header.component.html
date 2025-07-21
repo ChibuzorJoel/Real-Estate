@@ -17,38 +17,47 @@
     <!-- Navigation -->
     <nav class="main-nav" [class.open]="menuOpen">
       <ul>
-        <li class="nav-item active">
-          <a routerLink="/">Home</a>
+        <li class="nav-item">
+          <a href="/"><i class="fas fa-home"></i> Home</a>
         </li>
 
-        <li class="nav-item has-dropdown">
-          <a href="#">Sales Listings</a>
+        <!-- Combined Listings Dropdown -->
+        <li class="nav-item">
+          <a href="#"><i class="fas fa-building"></i> Listings <i class="fas fa-chevron-down"></i></a>
           <ul class="dropdown">
-          <li><a class="dropdown-item" routerLink="/sales/category/studios">Studios</a></li>
-          <li><a class="dropdown-item" routerLink="/sales/category/two-bedrooms">Two Bedrooms</a></li>
-          <li><a class="dropdown-item" routerLink="/sales/category/three-plus">3+ Bedrooms</a></li>
-          <li><a class="dropdown-item" routerLink="/sales/category/penthouses">Penthouses</a></li>
-          <li><a class="dropdown-item" routerLink="/sales/category/sold">Sold</a></li>
+            <li><strong>Sales</strong></li>
+            <li><a href="/sales/category/studios">Studios</a></li>
+            <li><a href="/sales/category/two-bedrooms">Two Bedrooms</a></li>
+            <li><a href="/sales/category/three-plus">3+ Bedrooms</a></li>
+            <li><a href="/sales/category/penthouses">Penthouses</a></li>
+            <li><a href="/sales/category/sold">Sold Listings</a></li>
+            <li><strong>Rentals</strong></li>
+            <li><a href="/rentals/category/studios">Studios</a></li>
+            <li><a href="/rentals/category/two-bedrooms">Two Bedrooms</a></li>
+            <li><a href="/rentals/category/three-plus">3+ Bedrooms</a></li>
+            <li><a href="/rentals/category/penthouses">Penthouses</a></li>
           </ul>
         </li>
 
-        <li class="nav-item">
-          <a routerLink="/buyer">Buyer's Guide</a>
-        </li>
+        <li class="nav-item"><a href="/about"><i class="fas fa-users"></i> About Us</a></li>
+        <li class="nav-item"><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
 
-        <li class="nav-item">
-          <a routerLink="/rent">Rentals</a>
-        </li>
-
-        <li class="nav-item">
-          <a routerLink="/about">About Us</a>
+        <!-- Account Dropdown -->
+        <li class="nav-item account-dropdown">
+          <a href="#" class="btn-auth"><i class="fas fa-user-circle"></i> Account <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="/account/login">Sign In</a></li>
+            <li><a href="/account/register">Register</a></li>
+          </ul>
         </li>
       </ul>
     </nav>
 
     <!-- CTA Button -->
     <div class="cta-button">
-      <a routerLink="/all-listings" class="btn-orange">All Listings</a>
+      <a routerLink="/all-listings" class="btn-orange">
+        <i class="fas fa-th-list"></i> All Listings
+      </a>
     </div>
   </div>
 </header>
