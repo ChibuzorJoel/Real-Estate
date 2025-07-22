@@ -157,6 +157,36 @@
     font-weight: 700;
     color: #222;
   }
+.listing-card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .btn-show-details {
+    margin-top: 0.5rem;
+
+    a {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      background-color: #ffc107;
+      color: black;
+      font-weight: 600;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: #e0a800;
+      }
+    }
+  }
+}
 
   .listings-grid {
     display: grid;
@@ -171,6 +201,54 @@
       grid-template-columns: 1fr;
     }
   }
+.status-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #28a745;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.listing-card {
+  position: relative;
+  cursor: pointer;
+
+  .listing-info {
+    .summary {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .features {
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+      color: #666;
+    }
+  }
+}
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 3;
+  
+
+  span {
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+
+  .filled {
+    color: red;
+  }
+}
 
   .listing-card {
     background: #fff;
