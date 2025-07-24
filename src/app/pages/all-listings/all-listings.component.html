@@ -1,8 +1,8 @@
-<div class="listings-container container py-5">
+<div class="listings-container container-fluid py-5">
   <h2 class="section-title text-center mb-4">All Property Listings</h2>
 
   <!-- Filters -->
-  <div class="filters mb-4 d-flex flex-wrap gap-3 justify-content-between">
+  <div class="filters container mb-4 d-flex flex-wrap gap-3 justify-content-between">
     <select [(ngModel)]="selectedType" class="form-select">
       <option value="">All Types</option>
       <option *ngFor="let t of uniqueTypes">{{ t }}</option>
