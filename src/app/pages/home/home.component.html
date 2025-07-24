@@ -52,7 +52,7 @@
       <div
         class="listing-card"
         *ngFor="let property of featuredProperties"
-        (click)="openModal(property)"
+      
       >
         <div class="img-container">
           <img [src]="property.image" [alt]="property.title" loading="lazy" />
@@ -85,27 +85,7 @@
     </div>
   </div>
 
-  <!-- Modal -->
-  <div class="modal-backdrop" *ngIf="selectedProperty" (click)="closeModal()">
-    <div class="property-modal" (click)="$event.stopPropagation()">
-      <button class="close-btn" (click)="closeModal()">×</button>
-      <img [src]="selectedProperty.image" [alt]="selectedProperty.title" />
-      <div class="modal-content">
-        <h3>{{ selectedProperty.title }}</h3>
-        <p><strong>Status:</strong> {{ selectedProperty.status | titlecase }}</p>
-        <p><strong>Location:</strong> {{ selectedProperty.location }}</p>
-        <p><strong>Price:</strong> ₦{{ selectedProperty.price | number }}</p>
-        <p><strong>Summary:</strong> {{ selectedProperty.summary }}</p>
-        <p><strong>Bedrooms:</strong> {{ selectedProperty.beds }}</p>
-        <p><strong>Bathrooms:</strong> {{ selectedProperty.baths }}</p>
-        <p><strong>Size:</strong> {{ selectedProperty.size }} sqft</p>
-        <p><strong>Agent:</strong> {{ selectedProperty.agentName }} ({{ selectedProperty.agentPhone }})</p>
-        <div class="btn-show-details">
-          <a [routerLink]="['/property', selectedProperty.id]" (click)="$event.stopPropagation()">Go to Details Page</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 </section>
 
 

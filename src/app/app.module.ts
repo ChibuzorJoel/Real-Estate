@@ -12,6 +12,8 @@ import { RentalsComponent } from './pages/rentals/rentals.component';
 import { FormsModule } from '@angular/forms';
 import { SalesCategoryComponent } from './pages/sales-category/sales-category.component';
 import { AllListingsComponent } from './pages/all-listings/all-listings.component';
+import { PropertyDetailsComponent } from './pages/property-details/property-details.component';
+import { SwiperModule } from 'swiper/types'; 
 
 @NgModule({
   declarations: [
@@ -23,12 +25,16 @@ import { AllListingsComponent } from './pages/all-listings/all-listings.componen
     GuideComponent,
     RentalsComponent,
     SalesCategoryComponent,
-    AllListingsComponent
+    AllListingsComponent,
+    PropertyDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    
+    FormsModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

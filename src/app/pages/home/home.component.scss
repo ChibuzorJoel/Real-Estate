@@ -157,16 +157,7 @@
     font-weight: 700;
     color: #222;
   }
-.listing-card {
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
-  &:hover {
-    transform: translateY(-5px);
-  }
 
   .btn-show-details {
     margin-top: 0.5rem;
@@ -323,7 +314,7 @@
       }
     }
   }
-}
+
 
 .how-it-works {
   background: linear-gradient(to bottom right, #86090965, #ffffff9a);

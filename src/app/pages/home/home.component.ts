@@ -151,14 +151,10 @@ export class HomeComponent {
   selectedProperty: any = null;
 
   // Open modal with selected property
-  openModal(property: any): void {
-    this.selectedProperty = property;
-  }
+  
 
   // Close the modal
-  closeModal(): void {
-    this.selectedProperty = null;
-  }
+  
   toggleFavorite(property: any): void {
   property.isFavorite = !property.isFavorite;
 }

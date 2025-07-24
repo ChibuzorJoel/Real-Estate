@@ -1,0 +1,102 @@
+<!-- property-detail.component.html -->
+<div class="property-detail-page container py-4">
+
+  <!-- Header and Back Button -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Property Details</h2>
+    <a routerLink="/" class="btn btn-outline-secondary">
+      ← Go Back
+    </a>
+  </div>
+
+  <!-- Image Gallery using Bootstrap Carousel -->
+  <div id="propertyCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div
+        class="carousel-item"
+        *ngFor="let img of property.images; let i = index"
+        [class.active]="i === 0"
+      >
+        <img
+          [src]="img"
+          class="d-block w-100"
+          alt="Property image"
+          style="max-height: 400px; object-fit: cover; border-radius: 10px;"
+        />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#propertyCarousel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#propertyCarousel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Property Info -->
+  <div class="property-info mb-4">
+    <h1>{{ property.title }}</h1>
+    <p><strong>Location:</strong> {{ property.location }}</p>
+    <p><strong>Status:</strong> {{ property.status | titlecase }}</p>
+    <p><strong>Price:</strong> ₦{{ property.price | number }}</p>
+    <p>
+      <strong>Beds:</strong> {{ property.beds }} |
+      <strong>Baths:</strong> {{ property.baths }} |
+      <strong>Size:</strong> {{ property.size }} sqft
+    </p>
+    <p class="summary">{{ property.summary }}</p>
+
+    <!-- Agent Info -->
+    <div class="agent-box p-3 bg-light rounded mt-3">
+      <h5>Agent Info</h5>
+      <p><strong>Name:</strong> {{ property.agentName }}</p>
+      <p><strong>Phone:</strong> {{ property.agentPhone }}</p>
+    </div>
+  </div>
+
+  <!-- Map Embed -->
+  <iframe
+    width="100%"
+    height="300"
+    frameborder="0"
+    style="border:0; border-radius:10px; margin-top:2rem;"
+    [src]="getMapUrl(property.location)"
+    allowfullscreen
+  ></iframe>
+
+  <!-- Related Properties -->
+  <div class="related-properties mt-5">
+    <h2>Related Properties</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let p of relatedProperties">
+        <div class="card h-100 shadow-sm">
+          <img
+            [src]="p.image"
+            [alt]="p.title"
+            class="card-img-top"
+            style="height: 200px; object-fit: cover;"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ p.title }}</h5>
+            <p class="card-text">{{ p.location }}</p>
+            <p><strong>₦{{ p.price | number }}</strong></p>
+            <a [routerLink]="['/property', p.id]" class="btn btn-sm btn-primary">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

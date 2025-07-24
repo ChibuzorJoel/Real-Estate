@@ -6,6 +6,7 @@ import { GuideComponent } from './pages/guide/guide.component';
 import { RentalsComponent } from './pages/rentals/rentals.component';
 import { SalesCategoryComponent } from './pages/sales-category/sales-category.component';
 import { AllListingsComponent } from './pages/all-listings/all-listings.component';
+import { PropertyDetailsComponent } from './pages/property-details/property-details.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'buyer', component: GuideComponent},
   {path: 'rent', component: RentalsComponent},
   {path: 'sales/category/:type',component: SalesCategoryComponent},
-  { path: 'all-listings', component: AllListingsComponent }
+  { path: 'all-listings', component: AllListingsComponent },
+  { path: 'property/:id', component: PropertyDetailsComponent }
 ];
 
 @NgModule({
