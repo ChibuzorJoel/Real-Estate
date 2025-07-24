@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { SalesCategoryComponent } from './pages/sales-category/sales-category.component';
 import { AllListingsComponent } from './pages/all-listings/all-listings.component';
 import { PropertyDetailsComponent } from './pages/property-details/property-details.component';
-import { SwiperModule } from 'swiper/types'; 
+
 
 @NgModule({
   declarations: [
@@ -31,7 +31,6 @@ import { SwiperModule } from 'swiper/types';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
     FormsModule,
     
     
