@@ -46,7 +46,7 @@
   </div>
 
   <!-- Property Info -->
-  <div class="property-info mb-4">
+  <div class="property-info mb-2">
     <h1>{{ property.title }}</h1>
     <p><strong>Location:</strong> {{ property.location }}</p>
     <p><strong>Status:</strong> {{ property.status | titlecase }}</p>
@@ -77,7 +77,7 @@
   ></iframe>
 
   <!-- Related Properties -->
-  <div class="related-properties mt-5">
+  <div class="related-properties mt-1">
     <h2>Related Properties</h2>
     <div class="row">
       <div class="col-md-4 mb-4" *ngFor="let p of relatedProperties">
