@@ -1,0 +1,71 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+        <div class="card-header bg-dark text-white">
+          <h4 class="mb-0">Contact Us</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="submitForm()" #form="ngForm" novalidate>
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                [(ngModel)]="formData.name"
+                required
+                minlength="3"
+                #name="ngModel"
+              />
+              <div class="text-danger" *ngIf="name.invalid && name.touched">
+                Name is required (min 3 characters).
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                [(ngModel)]="formData.email"
+                required
+                #email="ngModel"
+              />
+              <div class="text-danger" *ngIf="email.invalid && email.touched">
+                A valid email is required.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea
+                name="message"
+                class="form-control"
+                rows="5"
+                [(ngModel)]="formData.message"
+                required
+                minlength="10"
+                #message="ngModel"
+              ></textarea>
+              <div class="text-danger" *ngIf="message.invalid && message.touched">
+                Message is required (min 10 characters).
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+                Send Message
+              </button>
+            </div>
+          </form>
+
+          <div *ngIf="responseMessage" class="alert alert-info mt-4">
+            {{ responseMessage }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

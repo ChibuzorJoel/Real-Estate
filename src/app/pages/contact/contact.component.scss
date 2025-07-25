@@ -1,0 +1,49 @@
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(to right, #1d1d1d, #434343); // Dark gradient
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+
+  .card {
+    border-radius: 1rem;
+    overflow: hidden;
+
+    .card-header {
+      background: linear-gradient(135deg, #000, #333);
+      color: #fff;
+    }
+
+    .btn-primary {
+      background-color: #ffc107;
+      color: black;
+      border: none;
+      border-radius: 0.3rem;
+
+      &:hover {
+        background-color: #e0a800;
+      }
+    }
+
+    .form-control {
+      border-radius: 0.3rem;
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+    }
+
+    .text-danger {
+      font-size: 0.9rem;
+    }
+
+    .alert {
+      border-radius: 0.3rem;
+    }
+  }
+}

@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { SalesCategoryComponent } from './pages/sales-category/sales-category.component';
 import { AllListingsComponent } from './pages/all-listings/all-listings.component';
 import { PropertyDetailsComponent } from './pages/property-details/property-details.component';
-
+import { ContactComponent } from './pages/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,14 @@ import { PropertyDetailsComponent } from './pages/property-details/property-deta
     RentalsComponent,
     SalesCategoryComponent,
     AllListingsComponent,
-    PropertyDetailsComponent
+    PropertyDetailsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    
+    HttpClientModule
     
   ],
   providers: [],
